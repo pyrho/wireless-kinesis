@@ -1,0 +1,10 @@
+file_format: "1"
+id: wk
+name: Wireless Kinesis
+type: shield
+url: https://github.com/pyrho/wireless-kinesis/
+requires: [pro_micro]
+exposes:
+features:
+  - keys
+siblings:
