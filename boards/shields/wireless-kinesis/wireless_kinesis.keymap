@@ -1,14 +1,81 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// Layers defines
+#define DEFLT   0
+#define LOWER   1
+#define RAISE   2
+#define QWERT   3
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-    &kp ESC
+&kp ESC   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8                    &kp F9 &kp F10 &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 &kp F16 //NF
+
+&kp MINUS &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                  &kp N6  &kp N7  &kp N8   &kp N9   &kp N0   &kp EQL
+&kp TAB   &kp Q    &kp W   &kp F    &kp P     &kp G                                                   &kp J   &kp L   &kp U    &kp Y    &kp SEMI &kp BSLH
+&kp LCTL  &kp A    &kp R   &kp S    &kp T     &kp D                                                   &kp H   &kp N   &kp E    &kp I    &kp O    &kp QUOT
+&kp LSFT  &kp Z    &kp X   &kp C    &kp V     &kp B                                                   &kp K   &kp M   &kp CMMA &kp DOT  &kp FSLH &kp RSFT
+          &kp GRAV &kp F17 &kp LEFT &kp RIGHT                                                                 &kp UP  &kp DOWN &kp LBKT &kp RBKT
+
+                                                    &kp LGUI      &kp LCTL           &kp RGUI &kp RCTL
+                                                                  &kp HOME           &kp PGUP
+                                            &kp BKSP &mt LCTL ESC &kp LALT           &kp PGDN &kp RET &kp SPC
+            >;
+        };
+
+        // TODO
+        lower_layer {
+            bindings = <
+&kp ESC   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8                    &kp F9 &kp F10 &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 &kp F16 //NF
+
+&kp MINUS &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                  &kp N6  &kp N7  &kp N8   &kp N9   &kp N0   &kp EQL
+&kp TAB   &kp Q    &kp W   &kp F    &kp P     &kp G                                                   &kp J   &kp L   &kp U    &kp Y    &kp SEMI &kp BSLH
+&kp LCTL  &kp A    &kp R   &kp S    &kp T     &kp D                                                   &kp H   &kp N   &kp E    &kp I    &kp O    &kp QUOT
+&kp LSFT  &kp Z    &kp X   &kp C    &kp V     &kp B                                                   &kp K   &kp M   &kp CMMA &kp DOT  &kp FSLH &kp RSFT
+          &kp GRAV &kp F17 &kp LEFT &kp RIGHT                                                                 &kp UP  &kp DOWN &kp LBKT &kp RBKT
+
+                                                        &kp LCTL &kp LALT           &kp RGUI &kp RCTL
+                                                                 &kp HOME           &kp PGUP
+                                                &kp BKSP &kp DEL &kp END            &kp PGDN &kp RET &kp SPC
+            >;
+        };
+
+        // TODO
+        raise_layer {
+            bindings = <
+&kp ESC   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8                    &kp F9 &kp F10 &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 &kp F16 //NF
+
+&kp MINUS &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                  &kp N6  &kp N7  &kp N8   &kp N9   &kp N0   &kp EQL
+&kp TAB   &kp Q    &kp W   &kp F    &kp P     &kp G                                                   &kp J   &kp L   &kp U    &kp Y    &kp SEMI &kp BSLH
+&kp LCTL  &kp A    &kp R   &kp S    &kp T     &kp D                                                   &kp H   &kp N   &kp E    &kp I    &kp O    &kp QUOT
+&kp LSFT  &kp Z    &kp X   &kp C    &kp V     &kp B                                                   &kp K   &kp M   &kp CMMA &kp DOT  &kp FSLH &kp RSFT
+          &kp GRAV &kp F17 &kp LEFT &kp RIGHT                                                                 &kp UP  &kp DOWN &kp LBKT &kp RBKT
+
+                                                        &kp LCTL &kp LALT           &kp RGUI &kp RCTL
+                                                                 &kp HOME           &kp PGUP
+                                                &kp BKSP &kp DEL &kp END            &kp PGDN &kp RET &kp SPC
+            >;
+        };
+
+        qwerty_layer {
+            bindings = <
+&kp ESC   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8                    &kp F9 &kp F10 &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 &kp F16 //NF
+
+&kp MINUS &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                  &kp N6  &kp N7  &kp N8   &kp N9   &kp N0   &kp EQL
+&kp TAB   &kp Q    &kp W   &kp E    &kp R     &kp T                                                   &kp Y   &kp U   &kp I    &kp O    &kp P    &kp BSLH
+&kp LCTL  &kp A    &kp S   &kp D    &kp F     &kp G                                                   &kp H   &kp J   &kp K    &kp L    &kp SEMI &kp QUOT
+&kp LSFT  &kp Z    &kp X   &kp C    &kp V     &kp B                                                   &kp N   &kp M   &kp CMMA &kp DOT  &kp FSLH &kp RSFT
+          &kp GRAV &kp F17 &kp LEFT &kp RIGHT                                                                 &kp UP  &kp DOWN &kp LBKT &kp RBKT
+
+                                                        &kp LCTL &kp LALT           &kp RGUI &kp RCTL
+                                                                 &kp HOME           &kp PGUP
+                                                &kp BKSP &kp DEL &kp END            &kp PGDN &kp RET &kp SPC
             >;
         };
     };
 };
+// vim: set ft=c:
